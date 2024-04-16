@@ -1,4 +1,4 @@
-export const tr = {
+export const sw = {
     translation: {
       homeNav: 'Nyumbani',
       charactersNav: 'Wahusika',
