@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+  
+    &::after {
+      box-sizing: border-box;
+    }
+  
+    &::before {
+      box-sizing: border-box;
+    }
+  }
+  
+  ::selection {
+    color: #fff;
+    background: #3b3e43;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #dddddd;
+  }

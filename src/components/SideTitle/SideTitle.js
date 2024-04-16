@@ -13,7 +13,7 @@ const SideTitle = () => {
       <SideTitleLineDot direction={'reverse'} />
       <a
         className={styles.wrapper__icon}
-        href='https://www.linkedin.com/in/guneyeroglu/'
+        href='https://www.linkedin.com/in/byronomondi/'
         target={'_blank'}
         rel='noreferrer'
       >
@@ -21,7 +21,7 @@ const SideTitle = () => {
       </a>
       <a
         className={styles.wrapper__icon}
-        href='https://github.com/guneyeroglu/rick-and-morty-app'
+        href='https://github.com/byron00123/Rick-and-Morty-App'
         target={'_blank'}
         rel='noreferrer'
       >

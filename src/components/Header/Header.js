@@ -145,14 +145,14 @@ const Header = (props) => {
               </div>
               <div
                 className={styles.flag}
-                onClick={() => languageHandler('tr-TR')}
+                onClick={() => languageHandler('sw')}
               >
                 <img
                   src='https://img.icons8.com/plasticine/30/000000/morty-smith.png'
-                  alt='TR'
+                  alt='sw'
                 />
                 <span className={language === 'tr-TR' ? styles.active : ''}>
-                  TR
+                  SW
                 </span>
               </div>
             </div>
