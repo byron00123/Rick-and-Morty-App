@@ -1,0 +1,134 @@
+.container {
+    width: auto;
+    height: auto;
+    max-width: 1400px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  
+    &__nav {
+      background-color: transparent;
+      padding: 1rem 0.5rem;
+      border-radius: 0.5rem;
+  
+      span {
+        font-family: Roboto;
+        font-size: 2rem;
+        color: #3b3e43;
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+  
+      &:hover {
+        cursor: pointer;
+        background-color: #3b3e43;
+        padding: 1rem 0.5rem;
+        border-radius: 0.5rem;
+  
+        span {
+          font-family: Roboto;
+          font-size: 2rem;
+          color: #fff;
+          opacity: 1;
+          text-decoration: none;
+        }
+      }
+  
+      &:hover ~ .container__image {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    &__image {
+      width: 750px;
+      height: auto;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.35s ease-in-out;
+        animation: drop-shadow 10s ease-in-out infinite;
+      }
+    }
+  
+    @keyframes drop-shadow {
+      0% {
+        filter: drop-shadow(-1rem 1rem 2.5rem #4cf722);
+      }
+  
+      10% {
+        filter: drop-shadow(1rem 1rem 2.5rem #c1fd7c);
+      }
+  
+      20% {
+        filter: drop-shadow(-1rem 1rem 2.5rem #357d31);
+      }
+  
+      30% {
+        filter: drop-shadow(1rem 1rem 2.5rem #f8f7a4);
+      }
+  
+      40% {
+        filter: drop-shadow(-1rem 1rem 2.5rem #91cf22);
+      }
+  
+      50% {
+        filter: drop-shadow(1rem 1rem 2.5rem #f1bb49);
+      }
+  
+      60% {
+        filter: drop-shadow(-1rem 1rem 2.5rem #a9d945);
+      }
+  
+      70% {
+        filter: drop-shadow(1rem 1rem 2.5rem #6cbda3);
+      }
+  
+      80% {
+        filter: drop-shadow(-1rem 1rem 2.5rem #91cf22);
+      }
+  
+      90% {
+        filter: drop-shadow(1rem 1rem 2.5rem #61be25);
+      }
+  
+      100% {
+        filter: drop-shadow(-1rem 1rem 2.5rem #49ed23);
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      &__image {
+        width: 500px;
+        height: auto;
+  
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      &__image {
+        width: 300px;
+      }
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .container {
+      &__image {
+        width: 250px;
+      }
+    }
+  }

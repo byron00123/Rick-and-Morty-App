@@ -1,0 +1,25 @@
+.line {
+    margin: 2rem;
+    border-left: 0.25rem solid #3b3e43;
+    height: 300px;
+  }
+  
+  @media (max-width: 768px) {
+    .line {
+      margin: 1rem;
+      border-left: 0.25rem solid #3b3e43;
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .line {
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .line {
+      height: 100px;
+    }
+  }
