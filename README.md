@@ -1,6 +1,6 @@
 # Rick and Morty  App
 
-![Rick and Morty Characters] (assets/images/characters.jpg)
+![Rick and Morty Characters](characters.jpg)
 
 This simple React application fetches character data from the Rick and Morty API and displays them with sorting functionalities.
 
