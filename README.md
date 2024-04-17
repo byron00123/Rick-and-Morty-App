@@ -13,7 +13,7 @@ This simple React application fetches character data from the Rick and Morty API
 ```bash
 git clone git@github.com:byron00123/Rick-and-Morty-App.git
 npm install 
-
+```
 ## Functionalities
 * **Character Listing:** View a list of characters with their names and images.
 * **Sorting:** Organize the character list alphabetically (A-Z and Z-A) using the sorting functionality.
