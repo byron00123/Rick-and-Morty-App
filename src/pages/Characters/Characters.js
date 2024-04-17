@@ -5,7 +5,7 @@ import useSortOrder from '../../hooks/useSortOrder';
 
 import CardChar from '../../components/Cards/CardChar/CardChar';
 import Search from '../../components/Search/Search';
-import SortOrder from '../../components/SortOrder/SortOrder';
+import SortOrder from '../../components/SortOrder/SortOrder'; // Updated SortOrder
 import Pagination from '../../components/Pagination/Pagination';
 import NoData from '../../components/NoData/NoData';
 
@@ -15,11 +15,12 @@ const Characters = (props) => {
   const [charData, setCharData] = useState([]);
   const [pageData, setPageData] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [filter, setFilter] = useState('all'); // New state for filter
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://rickandmortyapi.com/api/character?page=${currentPage}`
+        `https://rickandmortyapi.com/api/character?page=${currentPage}${filter !== 'all' ? '&status=' + filter : ''}`
       );
 
       setCharData(response.data.results);
@@ -27,13 +28,15 @@ const Characters = (props) => {
     };
 
     fetchData();
-  }, [currentPage]);
+  }, [currentPage, filter]); // Update useEffect dependency for filter
 
   const { sort, onSetSort, onSortOrder } = useSortOrder('default', 'name');
 
-  const length = charData.filter((char) =>
+  const filteredData = charData.filter((char) =>
     char.name.toLowerCase().includes(props.value.toLowerCase())
-  ).length;
+  );
+
+  const length = filter === 'all' ? filteredData.length : charData.filter((char) => char.status === filter && char.name.toLowerCase().includes(props.value.toLowerCase())).length;
 
   return (
     <div className={styles.container}>
@@ -41,16 +44,20 @@ const Characters = (props) => {
         <div className={styles.search}>
           <Search value={props.value} onSetValue={props.onSetValue} />
         </div>
-        <SortOrder sort={sort} onSort={onSetSort} />
+        <SortOrder sort={sort} onSort={onSetSort} onFilter={setFilter} /> {/* Pass onFilter prop */}
       </div>
       <div className={styles.container__main}>
-        {charData &&
-          charData
-            .filter((char) =>
-              char.name.toLowerCase().includes(props.value.toLowerCase())
-            )
-            .sort(onSortOrder)
-            .map((char) => <CardChar data={char} key={char.id} />)}
+        {charData && (
+          <>
+            {filteredData.length > 0 ? (
+              filteredData.sort(onSortOrder).map((char) => (
+                <CardChar data={char} key={char.id} />
+              ))
+            ) : (
+              <NoData />
+            )}
+          </>
+        )}
         <div style={{ width: '100%', paddingRight: '1rem' }}>
           {length === 0 && <NoData />}
         </div>

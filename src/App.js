@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Characters from './pages/Characters/Characters';
 import CharacterDetails from './pages/CharacterDetails/CharacterDetails'; 
+import FavoriteChar from './pages/FavoriteChar/FavoriteChar';
 
 import NotFound from './pages/NotFound/NotFound';
 import './assets/i18n/index';
@@ -26,6 +27,12 @@ const App = () => {
           path='/characters'
           element={
             <Characters value={searchValue} onSetValue={setSearchValue} />
+          }
+        />
+         <Route
+          path='/favoritechar'
+          element={
+            <FavoriteChar value={searchValue} onSetValue={setSearchValue} />
           }
         />
           <Route path='/characters/:id' element={<CharacterDetails />} />

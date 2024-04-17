@@ -1,0 +1,46 @@
+.container {
+    margin: 2rem;
+  
+    &__filter {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 1rem 2rem 1rem;
+  
+      .search {
+        width: 400px;
+      }
+    }
+  
+    &__main {
+      padding: 0 0 0 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      margin: 2rem 1rem;
+  
+      &__filter {
+        .search {
+          width: 300px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .container {
+      margin: 2rem 0.25rem;
+  
+      &__filter {
+        .search {
+          width: 200px;
+        }
+      }
+    }
+  }

@@ -21,7 +21,7 @@ const CharacterDetails = () => {
       {character ? (
         <>
           {/* Display character details here */}
-          <img src={character.image} alt={character.name} />
+          <img src={character.image} alt={character.name} style={{ objectFit: 'cover', width: '100%' }} />
           <h2>{character.name}</h2>
           <p>Status: {character.status}</p>
           <p>Species: {character.species}</p>

@@ -53,16 +53,7 @@ const Header = (props) => {
       name: t('charactersNav'),
       to: '/characters',
     },
-    {
-      id: '1234-Header-Locations',
-      name: t('locationsNav'),
-      to: '/locations',
-    },
-    {
-      id: '1234-Header-Episodes',
-      name: t('episodesNav'),
-      to: '/episodes',
-    },
+   
     {
       id: '1234-Header-FavChar',
       name: t('favoriteCharNav'),
