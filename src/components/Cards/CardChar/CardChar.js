@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import DataContext from '../../../store/Context/ContextFav';
 
 import { useTranslation } from 'react-i18next';
@@ -18,12 +19,18 @@ const CardChar = ({ data }) => {
     <div className={styles.card}>
       <div className={styles.card__item}>
         <div className={styles.photo}>
-          <img src={char.image} alt={char.name} />
+          {/* Wrap the image in a Link component with character ID */}
+          <Link to={`/characters/${char.id}`}>
+            <img src={char.image} alt={char.name} />
+          </Link>
         </div>
         <div className={styles.content}>
           <div className={styles.content__head}>
             <div className={styles.title}>
-              <span>{char.name}</span>
+              {/* Wrap the name in a Link component with character ID */}
+              <Link to={`/characters/${char.id}`}>
+                <span>{char.name}</span>
+              </Link>
             </div>
             <div className={styles.info}>
               <div className={styles.info__status}>
