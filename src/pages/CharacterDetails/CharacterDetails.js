@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams for accessing character ID
 import axios from 'axios'; // Import axios for fetching data
+import styles from './CharacterDetails.module.scss';
 
 const CharacterDetails = () => {
   const { id } = useParams(); // Extract character ID from URL parameter
@@ -16,7 +17,7 @@ const CharacterDetails = () => {
   }, [id]); // Re-fetch data when id changes
 
   return (
-    <div className="character-details">
+    <div className={styles.characterDetails}>
       {character ? (
         <>
           {/* Display character details here */}
