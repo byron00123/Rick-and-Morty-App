@@ -6,8 +6,8 @@ This simple React application fetches character data from the Rick and Morty API
 
 ## Installation
 
-1. Clone this repository.
-2. Install the dependencies:
+ Clone this repository.
+
 
 ```bash
-npm install axios react react-dom
+npm install 
